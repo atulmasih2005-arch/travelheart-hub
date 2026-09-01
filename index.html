@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Travelheart — Travel Less. Feel More.</title>
+    <meta name="description" content="Travelheart is a slow travel journal for people who want to feel their journeys, not just tick them off. Stories from India and beyond. By Atul Masih.">
+    <meta name="keywords" content="slow travel India, mindful travel blog, Varanasi travel, Lucknow travel, travel journal, Travel Less Feel More">
+    <link rel="canonical" href="https://atulmasih2005-arch.github.io/travelheart-hub/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Travelheart — Travel Less. Feel More.">
+    <meta property="og:description" content="A slow travel journal from India. Stories, guides, and quiet places for travelers who want depth, not distance.">
+    <meta property="og:url" content="https://atulmasih2005-arch.github.io/travelheart-hub/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Travelheart",
+      "description": "A slow travel journal. Travel Less. Feel More.",
+      "url": "https://atulmasih2005-arch.github.io/travelheart-hub/",
+      "author": { "@type": "Person", "name": "Atul Masih" },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61582256121846",
+        "https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html"
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* ═══ TOKENS ═══ */
+        :root {
+            --forest:    #1C3A2A;
+            --forest-lt: #254D38;
+            --sage:      #6B8F71;
+            --sage-lt:   #A8C4A2;
+            --cream:     #F7F2E8;
+            --cream-dk:  #EDE7D9;
+            --gold:      #B8922A;
+            --gold-lt:   #D4AD4F;
+            --ink:       #1A1A16;
+            --muted:     #6B6A62;
+            --divider:   rgba(107,143,113,0.22);
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans:  'Inter', system-ui, sans-serif;
+            --max: 1080px;
+        }
+
+        /* ═══ RESET ═══ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-weight: 300;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ═══ LAYOUT ═══ */
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+        /* ═══ NAV ═══ */
+        nav {
+            position: sticky; top: 0; z-index: 200;
+            background: var(--forest);
+            border-bottom: 1px solid rgba(168,196,162,0.12);
+        }
+        .nav-inner {
+            display: flex; align-items: center;
+            justify-content: space-between; padding: 18px 0;
+        }
+        .nav-brand {
+            font-family: var(--serif); font-size: 1.3rem;
+            font-weight: 500; letter-spacing: 0.03em; color: var(--cream);
+        }
+        .nav-brand span { color: var(--gold-lt); font-style: italic; }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a {
+            font-family: var(--sans); font-size: 0.74rem;
+            font-weight: 400; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--sage-lt);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--cream); }
+        .nav-cta {
+            background: var(--gold); color: var(--cream) !important;
+            padding: 8px 18px; font-weight: 500 !important;
+            transition: background 0.2s !important;
+        }
+        .nav-cta:hover { background: var(--gold-lt) !important; color: var(--forest) !important; }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            background: var(--forest);
+            padding: 100px 0 88px;
+            position: relative; overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 72% 50%, rgba(168,196,162,0.09) 0%, transparent 58%),
+                repeating-linear-gradient(0deg, transparent, transparent 39px,
+                rgba(168,196,162,0.05) 39px, rgba(168,196,162,0.05) 40px);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 12px;
+            font-family: var(--sans); font-size: 0.68rem;
+            font-weight: 400; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--gold-lt); margin-bottom: 28px;
+        }
+        .hero-eyebrow::before {
+            content: ''; display: block; width: 28px;
+            height: 1px; background: var(--gold);
+        }
+        .hero-h1 {
+            font-family: var(--serif);
+            font-size: clamp(3.2rem, 8vw, 6rem);
+            font-weight: 300; line-height: 1.05;
+            color: var(--cream); max-width: 780px; margin-bottom: 28px;
+        }
+        .hero-h1 em { font-style: italic; color: var(--sage-lt); }
+        .hero-desc {
+            font-family: var(--serif); font-size: 1.15rem;
+            font-style: italic; font-weight: 300;
+            color: rgba(247,242,232,0.68);
+            max-width: 480px; line-height: 1.65; margin-bottom: 44px;
+        }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-block; background: var(--gold);
+            color: var(--cream); font-family: var(--sans);
+            font-size: 0.78rem; font-weight: 500;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 15px 32px; transition: background 0.2s;
+        }
+        .btn-primary:hover { background: var(--gold-lt); color: var(--forest); }
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid rgba(168,196,162,0.38);
+            color: var(--sage-lt); font-family: var(--sans);
+            font-size: 0.78rem; font-weight: 400;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 15px 32px; transition: border-color 0.2s, color 0.2s;
+        }
+        .btn-outline:hover { border-color: var(--cream); color: var(--cream); }
+        .hero-stats {
+            display: flex; gap: 48px;
+            margin-top: 60px; padding-top: 36px;
+            border-top: 1px solid rgba(168,196,162,0.15);
+        }
+        .stat-num {
+            font-family: var(--serif); font-size: 2rem;
+            font-weight: 400; color: var(--cream);
+            line-height: 1; margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 0.7rem; letter-spacing: 0.09em;
+            text-transform: uppercase; color: var(--sage-lt);
+        }
+
+        /* ═══ QUICK NAV ═══ */
+        .quick-nav {
+            background: var(--cream-dk);
+            border-bottom: 1px solid var(--divider);
+        }
+        .quick-nav-inner {
+            display: flex; overflow-x: auto; scrollbar-width: none;
+        }
+        .quick-nav-inner::-webkit-scrollbar { display: none; }
+        .quick-nav-item {
+            flex: 0 0 auto; display: flex; align-items: center;
+            gap: 10px; padding: 17px 28px;
+            border-right: 1px solid var(--divider);
+            font-size: 0.75rem; font-weight: 400;
+            letter-spacing: 0.07em; text-transform: uppercase;
+            color: var(--muted); white-space: nowrap;
+            transition: color 0.2s, background 0.2s;
+        }
+        .quick-nav-item:hover { color: var(--forest); background: rgba(107,143,113,0.08); }
+
+        /* ═══ ABOUT ═══ */
+        .about-section { padding: 84px 0; }
+        .about-inner {
+            display: grid; grid-template-columns: 0.85fr 1.15fr;
+            gap: 64px; align-items: start;
+        }
+        .about-label {
+            font-family: var(--sans); font-size: 0.67rem;
+            font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+        }
+        .about-name {
+            font-family: var(--serif);
+            font-size: clamp(2.1rem, 3.8vw, 3rem);
+            font-weight: 400; line-height: 1.15;
+            color: var(--forest); margin-bottom: 4px;
+        }
+        .about-role {
+            font-family: var(--serif); font-style: italic;
+            font-size: 1.05rem; color: var(--sage); margin-bottom: 24px;
+        }
+        .about-mark {
+            width: 46px; height: 2px; background: var(--gold); margin-bottom: 24px;
+        }
+        .about-body p {
+            font-size: 0.98rem; color: var(--ink);
+            line-height: 1.85; margin-bottom: 18px; max-width: 62ch;
+        }
+        .about-body p:last-child { margin-bottom: 0; }
+        .about-body em { font-style: italic; color: var(--forest); }
+
+        /* ═══ FEATURED GUIDES ═══ */
+        .guides-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1px; background: var(--divider);
+            border: 1px solid var(--divider);
+        }
+        .guide-card {
+            background: var(--cream); padding: 30px 26px 34px;
+            transition: background 0.2s;
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .guide-card:hover { background: var(--cream-dk); }
+        .guide-region {
+            font-size: 0.62rem; font-weight: 500;
+            letter-spacing: 0.13em; text-transform: uppercase;
+            color: var(--sage); margin-bottom: 14px;
+        }
+        .guide-name {
+            font-family: var(--serif); font-size: 1.32rem;
+            font-weight: 500; color: var(--forest);
+            margin-bottom: 10px; line-height: 1.25;
+        }
+        .guide-desc {
+            font-size: 0.85rem; color: var(--muted);
+            line-height: 1.65; margin-bottom: 22px; flex-grow: 1;
+        }
+        .guide-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.73rem; font-weight: 500;
+            color: var(--gold); letter-spacing: 0.05em;
+            border-bottom: 1px solid transparent; transition: border-color 0.2s;
+        }
+        .guide-link:hover { border-bottom-color: var(--gold); }
+
+        /* ═══ START HERE ═══ */
+        .starthere-section { background: var(--cream-dk); padding: 80px 0; }
+        .starthere-intro {
+            font-size: 0.95rem; color: var(--muted);
+            line-height: 1.75; max-width: 56ch; margin-bottom: 40px;
+        }
+        .starthere-list { list-style: none; counter-reset: sh; }
+        .starthere-item {
+            counter-increment: sh;
+            display: flex; align-items: baseline; gap: 22px;
+            padding: 22px 0; border-top: 1px solid var(--divider);
+        }
+        .starthere-item:last-child { border-bottom: 1px solid var(--divider); }
+        .starthere-item::before {
+            content: counter(sh, decimal-leading-zero);
+            font-family: var(--serif); font-size: 1.1rem;
+            font-style: italic; color: var(--gold);
+            flex-shrink: 0; width: 32px;
+        }
+        .starthere-item a {
+            font-family: var(--serif); font-size: 1.2rem;
+            font-weight: 500; color: var(--forest);
+            line-height: 1.4; transition: color 0.2s;
+        }
+        .starthere-item a:hover { color: var(--sage); }
+        .starthere-item p {
+            font-size: 0.82rem; color: var(--muted); margin-top: 4px;
+        }
+
+        /* ═══ SECTION BASE ═══ */
+        .section { padding: 80px 0; }
+        .section-eyebrow {
+            font-family: var(--sans); font-size: 0.67rem;
+            font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: var(--serif);
+            font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+            font-weight: 400; line-height: 1.18;
+            color: var(--forest); margin-bottom: 8px;
+        }
+        .section-header-row {
+            display: flex; align-items: flex-end;
+            justify-content: space-between; gap: 24px; margin-bottom: 36px;
+        }
+        .section-header-row .section-title { margin-bottom: 0; }
+        .view-all {
+            font-size: 0.74rem; font-weight: 500;
+            letter-spacing: 0.07em; text-transform: uppercase;
+            color: var(--gold); white-space: nowrap;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s; flex-shrink: 0;
+        }
+        .view-all:hover { border-bottom-color: var(--gold); }
+
+        /* ═══ POST CARDS ═══ */
+        .posts-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1px; background: var(--divider);
+            border: 1px solid var(--divider);
+        }
+        .post-card {
+            background: var(--cream); padding: 32px;
+            transition: background 0.2s;
+        }
+        .post-card:hover { background: var(--cream-dk); }
+        .post-card-tag {
+            font-size: 0.63rem; font-weight: 500;
+            letter-spacing: 0.13em; text-transform: uppercase;
+            color: var(--sage); margin-bottom: 12px;
+        }
+        .post-card-title {
+            font-family: var(--serif); font-size: 1.38rem;
+            font-weight: 500; line-height: 1.3;
+            color: var(--forest); margin-bottom: 12px;
+        }
+        .post-card-excerpt {
+            font-size: 0.87rem; color: var(--muted);
+            line-height: 1.68; margin-bottom: 20px;
+        }
+        .post-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.74rem; font-weight: 500;
+            letter-spacing: 0.05em; color: var(--gold);
+            border-bottom: 1px solid transparent; transition: border-color 0.2s;
+        }
+        .post-link:hover { border-bottom-color: var(--gold); }
+
+        /* ═══ STORE SECTION ═══ */
+        .store-section { background: var(--forest); padding: 80px 0; }
+        .store-section .section-eyebrow { color: var(--sage-lt); }
+        .store-section .section-title { color: var(--cream); }
+        .products-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+        }
+        .product-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(168,196,162,0.14);
+            padding: 32px; transition: border-color 0.25s, background 0.25s;
+        }
+        .product-card:hover {
+            border-color: var(--gold); background: rgba(255,255,255,0.07);
+        }
+        .product-badge {
+            display: inline-block; background: var(--gold);
+            color: var(--cream); font-size: 0.6rem;
+            font-weight: 500; letter-spacing: 0.1em;
+            text-transform: uppercase; padding: 3px 9px; margin-bottom: 20px;
+        }
+        .product-price {
+            font-family: var(--serif); font-size: 2rem;
+            font-weight: 300; color: var(--gold-lt);
+            line-height: 1; margin-bottom: 10px;
+        }
+        .product-name {
+            font-family: var(--serif); font-size: 1.2rem;
+            font-weight: 500; color: var(--cream);
+            margin-bottom: 10px; line-height: 1.3;
+        }
+        .product-desc {
+            font-size: 0.85rem; color: rgba(247,242,232,0.58);
+            line-height: 1.65; margin-bottom: 24px;
+        }
+        .btn-store {
+            display: inline-block; border: 1px solid var(--gold);
+            color: var(--gold); font-family: var(--sans);
+            font-size: 0.72rem; font-weight: 500;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 11px 22px; transition: background 0.2s, color 0.2s;
+        }
+        .btn-store:hover { background: var(--gold); color: var(--forest); }
+        .btn-store-free { border-color: var(--sage-lt); color: var(--sage-lt); }
+        .btn-store-free:hover { background: var(--sage-lt); color: var(--forest); }
+
+        /* ═══ GEAR SHELF ═══ */
+        .gear-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 1px; background: var(--divider);
+            border: 1px solid var(--divider);
+        }
+        .gear-card {
+            background: var(--cream); padding: 28px 24px;
+            transition: background 0.2s;
+        }
+        .gear-card:hover { background: var(--cream-dk); }
+        .gear-category {
+            font-size: 0.62rem; font-weight: 500;
+            letter-spacing: 0.13em; text-transform: uppercase;
+            color: var(--sage); margin-bottom: 10px;
+        }
+        .gear-name {
+            font-family: var(--serif); font-size: 1.1rem;
+            font-weight: 500; color: var(--forest);
+            margin-bottom: 8px; line-height: 1.3;
+        }
+        .gear-note {
+            font-size: 0.82rem; color: var(--muted);
+            line-height: 1.62; margin-bottom: 16px;
+        }
+        .gear-link {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 0.72rem; font-weight: 500;
+            color: var(--gold); letter-spacing: 0.04em;
+            border-bottom: 1px solid transparent; transition: border-color 0.2s;
+        }
+        .gear-link:hover { border-bottom-color: var(--gold); }
+        .affiliate-note {
+            font-size: 0.76rem; color: var(--muted);
+            font-style: italic; margin-bottom: 28px;
+        }
+
+        /* ═══ EMAIL ═══ */
+        .email-section { background: var(--cream-dk); padding: 80px 0; }
+        .email-inner {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 64px; align-items: center;
+        }
+        .email-title {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 400; color: var(--forest);
+            line-height: 1.2; margin-bottom: 12px;
+        }
+        .email-title em { font-style: italic; color: var(--sage); }
+        .email-body { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+        .email-perks { list-style: none; margin: 20px 0; }
+        .email-perks li {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 0.85rem; color: var(--ink); padding: 6px 0;
+        }
+        .email-perks li::before {
+            content: ''; display: block;
+            width: 6px; height: 6px;
+            background: var(--gold); flex-shrink: 0;
+        }
+        .email-form-wrap label {
+            display: block; font-size: 0.7rem;
+            font-weight: 500; letter-spacing: 0.11em;
+            text-transform: uppercase; color: var(--forest); margin-bottom: 10px;
+        }
+        .email-row { display: flex; }
+        .email-input {
+            flex: 1; background: white;
+            border: 1px solid var(--sage-lt); border-right: none;
+            padding: 14px 16px; font-family: var(--sans);
+            font-size: 0.9rem; color: var(--ink); outline: none;
+        }
+        .email-input:focus { border-color: var(--sage); }
+        .email-input::placeholder { color: var(--muted); }
+        .email-btn {
+            background: var(--forest); color: var(--cream);
+            border: 1px solid var(--forest);
+            padding: 14px 24px; font-family: var(--sans);
+            font-size: 0.74rem; font-weight: 500;
+            letter-spacing: 0.09em; text-transform: uppercase;
+            cursor: pointer; transition: background 0.2s; white-space: nowrap;
+        }
+        .email-btn:hover { background: var(--sage); border-color: var(--sage); }
+        .email-fine {
+            margin-top: 10px; font-size: 0.73rem; color: var(--muted);
+        }
+
+        /* ═══ FOOTER ═══ */
+        footer { background: var(--ink); padding: 56px 0 32px; }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; margin-bottom: 48px;
+        }
+        .footer-brand {
+            font-family: var(--serif); font-size: 1.3rem;
+            font-weight: 500; color: var(--cream); margin-bottom: 10px;
+        }
+        .footer-tagline {
+            font-size: 0.82rem; color: var(--muted);
+            line-height: 1.62; margin-bottom: 20px;
+        }
+        .footer-social { display: flex; gap: 10px; }
+        .social-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px;
+            border: 1px solid #2A2A26; color: var(--muted);
+            font-size: 0.73rem; font-weight: 500;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .social-btn:hover { border-color: var(--sage); color: var(--sage-lt); }
+        .footer-col-title {
+            font-size: 0.67rem; font-weight: 500;
+            letter-spacing: 0.13em; text-transform: uppercase;
+            color: var(--sage-lt); margin-bottom: 16px;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a {
+            font-size: 0.83rem; color: var(--muted); transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--cream); }
+        .footer-bottom {
+            border-top: 1px solid #222220; padding-top: 24px;
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 24px; flex-wrap: wrap;
+        }
+        .footer-copy { font-size: 0.74rem; color: #3A3A34; }
+        .footer-affiliate {
+            font-size: 0.71rem; color: #3A3A34;
+            max-width: 560px; line-height: 1.55;
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 900px) {
+            .posts-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .gear-grid { grid-template-columns: repeat(2, 1fr); }
+            .guides-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .email-inner { grid-template-columns: 1fr; gap: 36px; }
+            .about-inner { grid-template-columns: 1fr; gap: 28px; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hero { padding: 64px 0 56px; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .hero-actions { flex-direction: column; }
+            .btn-primary, .btn-outline { text-align: center; }
+            .section { padding: 56px 0; }
+            .about-section { padding: 56px 0; }
+            .starthere-section { padding: 56px 0; }
+            .gear-grid { grid-template-columns: 1fr; }
+            .guides-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+            .section-header-row { flex-direction: column; align-items: flex-start; }
+            .email-row { flex-direction: column; }
+            .email-input {
+                border-right: 1px solid var(--sage-lt); border-bottom: none;
+            }
+            .starthere-item { gap: 14px; }
+            .starthere-item::before { width: 26px; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+    <div class="wrap nav-inner">
+        <a href="/" class="nav-brand">Travel<span>heart</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#store">Store</a></li>
+            <li><a href="#gear">Gear</a></li>
+            <li><a class="nav-cta" href="#letters">Get the Checklist</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+    <div class="wrap hero-content">
+        <p class="hero-eyebrow">A slow travel journal from India and beyond</p>
+        <h1 class="hero-h1">Travel Less.<br><em>Feel More.</em></h1>
+        <p class="hero-desc">Stories, guides, and quiet places for travelers who want depth — not a checklist.</p>
+        <div class="hero-actions">
+            <a class="btn-primary" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Start Reading</a>
+            <a class="btn-outline" href="#store">Browse the Store</a>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <p class="stat-num">400+</p>
+                <p class="stat-label">Followers</p>
+            </div>
+            <div>
+                <p class="stat-num">24</p>
+                <p class="stat-label">Weekly Series Posts</p>
+            </div>
+            <div>
+                <p class="stat-num">1</p>
+                <p class="stat-label">Published Journal</p>
+            </div>
+            <div>
+                <p class="stat-num">∞</p>
+                <p class="stat-label">Slow Moments</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ─── QUICK NAV ─── -->
+<div class="quick-nav">
+    <div class="wrap">
+        <div class="quick-nav-inner">
+            <a class="quick-nav-item" href="#start-here">
+                📖 &nbsp;New Here? Start Reading
+            </a>
+            <a class="quick-nav-item" href="#guides">
+                🗺 &nbsp;Featured Guides
+            </a>
+            <a class="quick-nav-item" href="#store">
+                🎒 &nbsp;Store & Downloads
+            </a>
+            <a class="quick-nav-item" href="#gear">
+                ✦ &nbsp;Gear Picks
+            </a>
+            <a class="quick-nav-item" href="#letters">
+                ✉ &nbsp;Free Packing List
+            </a>
+            <a class="quick-nav-item" href="https://www.facebook.com/profile.php?id=61582256121846" target="_blank">
+                ↗ &nbsp;Facebook Community
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about" class="about-section">
+    <div class="wrap about-inner">
+        <div>
+            <p class="about-label">Who's Writing This</p>
+            <h2 class="about-name">Atul Masih</h2>
+            <p class="about-role">Slow traveler, based in Lucknow</p>
+            <div class="about-mark"></div>
+        </div>
+        <div class="about-body">
+            <p>I don't travel like a tourist ticking off a list. I travel the way you'd revisit a place you already love — slowly, and paying attention to the small things everyone else walks past.</p>
+            <p>Travelheart started because I got tired of guides that tell you where to stand for a photo but nothing about why a place actually matters. What I write instead is closer to a conversation with the ghats, the old lanes, the people who've lived somewhere for sixty years and have opinions about it.</p>
+            <p><em>Travel Less. Feel More.</em> isn't a slogan I picked for the homepage — it's the whole point. If you've ever come home from a trip more exhausted than when you left, this journal is for you.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FEATURED GUIDES ─── -->
+<section id="guides" class="section">
+    <div class="wrap">
+        <div class="section-header-row">
+            <div>
+                <p class="section-eyebrow">Where to Start Exploring</p>
+                <h2 class="section-title">Featured Guides</h2>
+            </div>
+            <a class="view-all" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">All destinations →</a>
+        </div>
+        <div class="guides-grid">
+            <article class="guide-card">
+                <p class="guide-region">Uttar Pradesh</p>
+                <h3 class="guide-name">Varanasi</h3>
+                <p class="guide-desc">Ancient ghats, sunrise boat rituals, and morning walks through lanes older than most countries. The city that taught me to stop rushing.</p>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+            </article>
+            <article class="guide-card">
+                <p class="guide-region">Uttar Pradesh</p>
+                <h3 class="guide-name">Ayodhya</h3>
+                <p class="guide-desc">Ram Mandir, riverside evenings, and the local culture behind the headlines. Practical notes for a respectful, unhurried visit.</p>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+            </article>
+            <article class="guide-card">
+                <p class="guide-region">Uttar Pradesh</p>
+                <h3 class="guide-name">Lucknow</h3>
+                <p class="guide-desc">Heritage walks, kebabs eaten standing up at 7 a.m., and the quiet architecture tucked behind the noisy main roads. My home turf.</p>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+            </article>
+            <article class="guide-card">
+                <p class="guide-region">Uttar Pradesh</p>
+                <h3 class="guide-name">Kannauj</h3>
+                <p class="guide-desc">India's perfume capital, where families have distilled attar the same way for generations. A slower, stranger kind of travel story.</p>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ─── START HERE ─── -->
+<section id="start-here" class="starthere-section">
+    <div class="wrap">
+        <p class="section-eyebrow">New to Travelheart?</p>
+        <h2 class="section-title">Start Here</h2>
+        <p class="starthere-intro">There's no single "best" post to begin with, but these are the ones readers keep coming back to. Read them in order and you'll get the full shape of what this journal is trying to do.</p>
+        <ol class="starthere-list">
+            <li class="starthere-item">
+                <div>
+                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Varanasi Slow Travel Guide</a>
+                    <p>The one that started it all — and the clearest example of what "travel less, feel more" actually looks like on the ground.</p>
+                </div>
+            </li>
+            <li class="starthere-item">
+                <div>
+                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">First-Time Ayodhya Guide</a>
+                    <p>What to expect, when to go, and how to visit without turning it into a checklist stop.</p>
+                </div>
+            </li>
+            <li class="starthere-item">
+                <div>
+                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Walking Through Old Lucknow</a>
+                    <p>A neighborhood-by-neighborhood ramble through the city most people only pass through on their way somewhere else.</p>
+                </div>
+            </li>
+            <li class="starthere-item">
+                <div>
+                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Kannauj Perfume Trail</a>
+                    <p>The strangest, most memorable day trip I've written about — and the one readers email me about the most.</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- ─── POSTS ─── -->
+<section class="section">
+    <div class="wrap">
+        <div class="section-header-row">
+            <div>
+                <p class="section-eyebrow">From the Journal</p>
+                <h2 class="section-title">Latest From the Journal</h2>
+            </div>
+            <a class="view-all" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read all posts →</a>
+        </div>
+        <div class="posts-grid">
+            <article class="post-card">
+                <p class="post-card-tag">Varanasi · Week 12</p>
+                <h3 class="post-card-title">The City That Refuses to Let You Rush</h3>
+                <p class="post-card-excerpt">There are cities you visit. And there are cities that visit you back. Varanasi is the second kind — and it has things to say if you sit still long enough to hear them.</p>
+                <a class="post-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the full post →</a>
+            </article>
+            <article class="post-card">
+                <p class="post-card-tag">Slow Travel · Philosophy</p>
+                <h3 class="post-card-title">Why I Stopped Planning Every Hour of My Trips</h3>
+                <p class="post-card-excerpt">The best thing I ever did was throw the itinerary away on day three. Here's what showed up in the gaps when I stopped filling every minute with something to do.</p>
+                <a class="post-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the full post →</a>
+            </article>
+            <article class="post-card">
+                <p class="post-card-tag">Lost Postcards Series</p>
+                <h3 class="post-card-title">Forgotten India: Places Still Kept Like Secrets</h3>
+                <p class="post-card-excerpt">Photographs, notes, and half-remembered conversations from corners of India that guidebooks haven't caught up with yet. This one starts in Lucknow at 6 a.m.</p>
+                <a class="post-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the full post →</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ─── STORE ─── -->
+<section id="store" class="store-section">
+    <div class="wrap">
+        <div class="section-header-row">
+            <div>
+                <p class="section-eyebrow">Open Your Pack</p>
+                <h2 class="section-title" style="color:var(--cream)">Guides & Resources for the Slow Traveler</h2>
+            </div>
+            <a class="view-all" style="color:var(--gold-lt)" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">See all →</a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="product-badge">KDP Paperback</span>
+                <p class="product-price">₹349</p>
+                <p class="product-name">Travel Less, Feel More — The Journal</p>
+                <p class="product-desc">A guided companion for mindful travel. Prompts, reflections, and space to actually process your journey instead of just photographing it.</p>
+                <a class="btn-store" href="https://www.amazon.in?tag=travelheart20-21" target="_blank">Get on Amazon</a>
+            </div>
+            <div class="product-card">
+                <span class="product-badge">Digital Download</span>
+                <p class="product-price">₹149</p>
+                <p class="product-name">Lost Postcards of India — Printable Set</p>
+                <p class="product-desc">12 illustrated postcards from forgotten India. Print them, send them, frame them. Each one carries a short story you won't find in any guidebook.</p>
+                <a class="btn-store" href="#" target="_blank">Download on Gumroad</a>
+            </div>
+            <div class="product-card">
+                <span class="product-badge">Free</span>
+                <p class="product-price">₹0</p>
+                <p class="product-name">The Mindful Packer's Checklist</p>
+                <p class="product-desc">Pack less. Move lighter. A simple, honest checklist for slow travelers who want to travel with intention — not a 25kg suitcase of what-ifs.</p>
+                <a class="btn-store btn-store-free" href="#letters">Download Free</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── GEAR ─── -->
+<section id="gear" class="section">
+    <div class="wrap">
+        <p class="section-eyebrow">Gear We Trust</p>
+        <h2 class="section-title">Tools That Actually Make Travel Better</h2>
+        <p class="affiliate-note">Honest picks. No clutter. Affiliate links — Travelheart earns a small commission if you buy, at no extra cost to you.</p>
+        <div class="gear-grid">
+            <div class="gear-card">
+                <p class="gear-category">Pack & Carry</p>
+                <p class="gear-name">Osprey Farpoint 40</p>
+                <p class="gear-note">The bag I've carried from Varanasi to the Scottish Highlands. Fits cabin baggage. Has never failed me. Once is luck — three times is the bag.</p>
+                <a class="gear-link" href="https://www.amazon.in/s?k=osprey+farpoint+40&tag=travelheart20-21" target="_blank">View on Amazon →</a>
+            </div>
+            <div class="gear-card">
+                <p class="gear-category">Write & Reflect</p>
+                <p class="gear-name">Leuchtturm1917 Notebook</p>
+                <p class="gear-note">Numbered pages, index, paper that handles a fountain pen. The only notebook worth writing real travel thoughts in. Built to outlast the trip.</p>
+                <a class="gear-link" href="https://www.amazon.in/s?k=leuchtturm1917+notebook&tag=travelheart20-21" target="_blank">View on Amazon →</a>
+            </div>
+            <div class="gear-card">
+                <p class="gear-category">Capture & Remember</p>
+                <p class="gear-name">Sony ZV-1 Camera</p>
+                <p class="gear-note">Compact, honest image quality. Small enough to not interrupt the moment you're trying to capture. Good for photos and video storytelling both.</p>
+                <a class="gear-link" href="https://www.amazon.in/s?k=sony+zv1+camera&tag=travelheart20-21" target="_blank">View on Amazon →</a>
+            </div>
+            <div class="gear-card">
+                <p class="gear-category">Rest & Recover</p>
+                <p class="gear-name">Travel Pillow & Sleep Mask</p>
+                <p class="gear-note">The unsexy essential. Long overnight trains across India are a completely different experience when you can actually sleep through them.</p>
+                <a class="gear-link" href="https://www.amazon.in/s?k=travel+pillow+sleep+mask&tag=travelheart20-21" target="_blank">View on Amazon →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── EMAIL ─── -->
+<section id="letters" class="email-section">
+    <div class="wrap email-inner">
+        <div>
+            <p class="section-eyebrow">Letters from Slow Places</p>
+            <h2 class="email-title">Quiet writing for<br><em>restless minds</em></h2>
+            <p class="email-body">Occasional letters about travel, stillness, and the things you only notice when you stop rushing. No spam. Just honest words from the road.</p>
+            <ul class="email-perks">
+                <li>Free Mindful Packer's Checklist — instant download</li>
+                <li>First access to new posts and guides</li>
+                <li>Subscriber-only gear deals and discounts</li>
+            </ul>
+        </div>
+        <div class="email-form-wrap">
+            <label for="email-in">Your email address</label>
+            <div class="email-row">
+                <input class="email-input" id="email-in" type="email" placeholder="you@example.com" />
+                <button class="email-btn" type="button">Subscribe</button>
+            </div>
+            <p class="email-fine">No spam. Unsubscribe anytime. Checklist arrives instantly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <p class="footer-brand">Travelheart</p>
+                <p class="footer-tagline">A slow travel journal from Lucknow, India.<br>Written for people who want to feel their journeys, not just finish them.</p>
+                <div class="footer-social">
+                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61582256121846" target="_blank" title="Facebook">fb</a>
+                    <a class="social-btn" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html" title="Blog">bl</a>
+                    <a class="social-btn" href="https://www.youtube.com/@atulmasih1" target="_blank" title="YouTube">yt</a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-col-title">Read</p>
+                <ul class="footer-links">
+                    <li><a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Start Here</a></li>
+                    <li><a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">The Journal</a></li>
+                    <li><a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Lost Postcards</a></li>
+                    <li><a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">24-Week Series</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-col-title">Shop</p>
+                <ul class="footer-links">
+                    <li><a href="https://www.amazon.in?tag=travelheart20-21" target="_blank">The Journal (Amazon)</a></li>
+                    <li><a href="#">Postcards (Gumroad)</a></li>
+                    <li><a href="#gear">Gear Picks</a></li>
+                    <li><a href="#letters">Free Checklist</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-col-title">Connect</p>
+                <ul class="footer-links">
+                    <li><a href="https://www.facebook.com/profile.php?id=61582256121846" target="_blank">Facebook Page</a></li>
+                    <li><a href="#letters">Newsletter</a></li>
+                    <li><a href="https://www.youtube.com/@atulmasih1" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 Travelheart · Atul Masih · All rights reserved.</span>
+            <p class="footer-affiliate">Travelheart is a participant in the Amazon Associates Programme (India). Some links on this site are affiliate links — if you purchase through them, we earn a small commission at no extra cost to you. We only recommend things we'd actually carry on a trip.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
