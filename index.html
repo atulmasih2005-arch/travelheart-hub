@@ -395,6 +395,10 @@
         .btn-store:hover { background: var(--gold); color: var(--forest); }
         .btn-store-free { border-color: var(--sage-lt); color: var(--sage-lt); }
         .btn-store-free:hover { background: var(--sage-lt); color: var(--forest); }
+        .btn-store-disabled {
+            border-color: rgba(247,242,232,0.25); color: rgba(247,242,232,0.4);
+            cursor: default; pointer-events: none;
+        }
 
         /* ═══ GEAR SHELF ═══ */
         .gear-grid {
@@ -498,12 +502,12 @@
             font-size: 0.82rem; color: var(--muted);
             line-height: 1.62; margin-bottom: 20px;
         }
-        .footer-social { display: flex; gap: 10px; }
+        .footer-social { display: flex; gap: 10px; flex-wrap: wrap; }
         .social-btn {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 36px; height: 36px;
+            padding: 9px 16px;
             border: 1px solid #2A2A26; color: var(--muted);
-            font-size: 0.73rem; font-weight: 500;
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 0.02em;
             transition: border-color 0.2s, color 0.2s;
         }
         .social-btn:hover { border-color: var(--sage); color: var(--sage-lt); }
@@ -567,7 +571,7 @@
 <!-- ─── NAV ─── -->
 <nav>
     <div class="wrap nav-inner">
-        <a href="/" class="nav-brand">Travel<span>heart</span></a>
+        <a href="/travelheart-hub/" class="nav-brand">Travel<span>heart</span></a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#guides">Guides</a></li>
@@ -657,103 +661,36 @@
     <div class="wrap">
         <div class="section-header-row">
             <div>
-                <p class="section-eyebrow">Where to Start Exploring</p>
-                <h2 class="section-title">Featured Guides</h2>
+                <p class="section-eyebrow">New to Travelheart? Start Here</p>
+                <h2 class="section-title">Where the Stories Live</h2>
             </div>
-            <a class="view-all" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">All destinations →</a>
+            <a class="view-all" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the blog →</a>
         </div>
+        <p class="starthere-intro">This hub is the front door. Every guide below is currently written and published on the Travelheart blog — the button on each card takes you there. Dedicated pages for each destination are coming as this site grows.</p>
         <div class="guides-grid">
             <article class="guide-card">
                 <p class="guide-region">Uttar Pradesh</p>
                 <h3 class="guide-name">Varanasi</h3>
                 <p class="guide-desc">Ancient ghats, sunrise boat rituals, and morning walks through lanes older than most countries. The city that taught me to stop rushing.</p>
-                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read on the blog →</a>
             </article>
             <article class="guide-card">
                 <p class="guide-region">Uttar Pradesh</p>
                 <h3 class="guide-name">Ayodhya</h3>
                 <p class="guide-desc">Ram Mandir, riverside evenings, and the local culture behind the headlines. Practical notes for a respectful, unhurried visit.</p>
-                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read on the blog →</a>
             </article>
             <article class="guide-card">
                 <p class="guide-region">Uttar Pradesh</p>
                 <h3 class="guide-name">Lucknow</h3>
                 <p class="guide-desc">Heritage walks, kebabs eaten standing up at 7 a.m., and the quiet architecture tucked behind the noisy main roads. My home turf.</p>
-                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read on the blog →</a>
             </article>
             <article class="guide-card">
                 <p class="guide-region">Uttar Pradesh</p>
                 <h3 class="guide-name">Kannauj</h3>
                 <p class="guide-desc">India's perfume capital, where families have distilled attar the same way for generations. A slower, stranger kind of travel story.</p>
-                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the guide →</a>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- ─── START HERE ─── -->
-<section id="start-here" class="starthere-section">
-    <div class="wrap">
-        <p class="section-eyebrow">New to Travelheart?</p>
-        <h2 class="section-title">Start Here</h2>
-        <p class="starthere-intro">There's no single "best" post to begin with, but these are the ones readers keep coming back to. Read them in order and you'll get the full shape of what this journal is trying to do.</p>
-        <ol class="starthere-list">
-            <li class="starthere-item">
-                <div>
-                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Varanasi Slow Travel Guide</a>
-                    <p>The one that started it all — and the clearest example of what "travel less, feel more" actually looks like on the ground.</p>
-                </div>
-            </li>
-            <li class="starthere-item">
-                <div>
-                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">First-Time Ayodhya Guide</a>
-                    <p>What to expect, when to go, and how to visit without turning it into a checklist stop.</p>
-                </div>
-            </li>
-            <li class="starthere-item">
-                <div>
-                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Walking Through Old Lucknow</a>
-                    <p>A neighborhood-by-neighborhood ramble through the city most people only pass through on their way somewhere else.</p>
-                </div>
-            </li>
-            <li class="starthere-item">
-                <div>
-                    <a href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Kannauj Perfume Trail</a>
-                    <p>The strangest, most memorable day trip I've written about — and the one readers email me about the most.</p>
-                </div>
-            </li>
-        </ol>
-    </div>
-</section>
-
-<!-- ─── POSTS ─── -->
-<section class="section">
-    <div class="wrap">
-        <div class="section-header-row">
-            <div>
-                <p class="section-eyebrow">From the Journal</p>
-                <h2 class="section-title">Latest From the Journal</h2>
-            </div>
-            <a class="view-all" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read all posts →</a>
-        </div>
-        <div class="posts-grid">
-            <article class="post-card">
-                <p class="post-card-tag">Varanasi · Week 12</p>
-                <h3 class="post-card-title">The City That Refuses to Let You Rush</h3>
-                <p class="post-card-excerpt">There are cities you visit. And there are cities that visit you back. Varanasi is the second kind — and it has things to say if you sit still long enough to hear them.</p>
-                <a class="post-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the full post →</a>
-            </article>
-            <article class="post-card">
-                <p class="post-card-tag">Slow Travel · Philosophy</p>
-                <h3 class="post-card-title">Why I Stopped Planning Every Hour of My Trips</h3>
-                <p class="post-card-excerpt">The best thing I ever did was throw the itinerary away on day three. Here's what showed up in the gaps when I stopped filling every minute with something to do.</p>
-                <a class="post-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the full post →</a>
-            </article>
-            <article class="post-card">
-                <p class="post-card-tag">Lost Postcards Series</p>
-                <h3 class="post-card-title">Forgotten India: Places Still Kept Like Secrets</h3>
-                <p class="post-card-excerpt">Photographs, notes, and half-remembered conversations from corners of India that guidebooks haven't caught up with yet. This one starts in Lucknow at 6 a.m.</p>
-                <a class="post-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read the full post →</a>
+                <a class="guide-link" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Read on the blog →</a>
             </article>
         </div>
     </div>
@@ -775,14 +712,14 @@
                 <p class="product-price">₹349</p>
                 <p class="product-name">Travel Less, Feel More — The Journal</p>
                 <p class="product-desc">A guided companion for mindful travel. Prompts, reflections, and space to actually process your journey instead of just photographing it.</p>
-                <a class="btn-store" href="https://www.amazon.in?tag=travelheart20-21" target="_blank">Get on Amazon</a>
+                <a class="btn-store" href="https://www.amazon.in/s?k=Travel+Less+Feel+More+Journal+Atul+Masih&tag=travelheart20-21" target="_blank">Search on Amazon</a>
             </div>
             <div class="product-card">
-                <span class="product-badge">Digital Download</span>
+                <span class="product-badge">Coming Soon</span>
                 <p class="product-price">₹149</p>
                 <p class="product-name">Lost Postcards of India — Printable Set</p>
                 <p class="product-desc">12 illustrated postcards from forgotten India. Print them, send them, frame them. Each one carries a short story you won't find in any guidebook.</p>
-                <a class="btn-store" href="#" target="_blank">Download on Gumroad</a>
+                <a class="btn-store btn-store-disabled" aria-disabled="true">Launching Soon</a>
             </div>
             <div class="product-card">
                 <span class="product-badge">Free</span>
@@ -838,7 +775,7 @@
             <h2 class="email-title">Quiet writing for<br><em>restless minds</em></h2>
             <p class="email-body">Occasional letters about travel, stillness, and the things you only notice when you stop rushing. No spam. Just honest words from the road.</p>
             <ul class="email-perks">
-                <li>Free Mindful Packer's Checklist — instant download</li>
+                <li>Free Mindful Packer's Checklist</li>
                 <li>First access to new posts and guides</li>
                 <li>Subscriber-only gear deals and discounts</li>
             </ul>
@@ -847,9 +784,9 @@
             <label for="email-in">Your email address</label>
             <div class="email-row">
                 <input class="email-input" id="email-in" type="email" placeholder="you@example.com" />
-                <button class="email-btn" type="button">Subscribe</button>
+                <button class="email-btn" type="button" onclick="handleEmailSignup()">Subscribe</button>
             </div>
-            <p class="email-fine">No spam. Unsubscribe anytime. Checklist arrives instantly.</p>
+            <p class="email-fine" id="email-fine">No spam. Unsubscribe anytime.</p>
         </div>
     </div>
 </section>
@@ -862,9 +799,9 @@
                 <p class="footer-brand">Travelheart</p>
                 <p class="footer-tagline">A slow travel journal from Lucknow, India.<br>Written for people who want to feel their journeys, not just finish them.</p>
                 <div class="footer-social">
-                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61582256121846" target="_blank" title="Facebook">fb</a>
-                    <a class="social-btn" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html" title="Blog">bl</a>
-                    <a class="social-btn" href="https://www.youtube.com/@atulmasih1" target="_blank" title="YouTube">yt</a>
+                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61582256121846" target="_blank">Facebook</a>
+                    <a class="social-btn" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">Blog</a>
+                    <a class="social-btn" href="https://www.youtube.com/@atulmasih1" target="_blank">YouTube</a>
                 </div>
             </div>
             <div>
@@ -879,8 +816,8 @@
             <div>
                 <p class="footer-col-title">Shop</p>
                 <ul class="footer-links">
-                    <li><a href="https://www.amazon.in?tag=travelheart20-21" target="_blank">The Journal (Amazon)</a></li>
-                    <li><a href="#">Postcards (Gumroad)</a></li>
+                    <li><a href="https://www.amazon.in/s?k=Travel+Less+Feel+More+Journal+Atul+Masih&tag=travelheart20-21" target="_blank">The Journal (Amazon)</a></li>
+                    <li><span style="color:rgba(247,242,232,0.4)">Postcards — Coming Soon</span></li>
                     <li><a href="#gear">Gear Picks</a></li>
                     <li><a href="#letters">Free Checklist</a></li>
                 </ul>
@@ -901,5 +838,20 @@
     </div>
 </footer>
 
+<script>
+    function handleEmailSignup() {
+        var input = document.getElementById('email-in');
+        var fine = document.getElementById('email-fine');
+        if (!input.value || !input.value.includes('@')) {
+            fine.textContent = 'Please enter a valid email address.';
+            fine.style.color = '#c0785a';
+            return;
+        }
+        // TODO: replace this block with your MailerLite / ConvertKit form action
+        // once connected, so submissions are actually captured.
+        fine.textContent = "Thanks — signups aren't connected yet, check back soon!";
+        fine.style.color = 'var(--sage-lt)';
+    }
+</script>
 </body>
 </html>
