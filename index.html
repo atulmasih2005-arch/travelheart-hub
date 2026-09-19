@@ -707,13 +707,16 @@
             <a class="view-all" style="color:var(--gold-lt)" href="https://atulmasihlive.blogspot.com/p/start-here-welcome-to-travelheart.html">See all →</a>
         </div>
         <div class="products-grid">
+
+            <!-- ✦ CHANGE 1: Badge "KDP Paperback" → "Coming Soon", Amazon link → disabled "Launching Soon" -->
             <div class="product-card">
-                <span class="product-badge">KDP Paperback</span>
+                <span class="product-badge">Coming Soon</span>
                 <p class="product-price">₹349</p>
                 <p class="product-name">Travel Less, Feel More — The Journal</p>
                 <p class="product-desc">A guided companion for mindful travel. Prompts, reflections, and space to actually process your journey instead of just photographing it.</p>
-                <a class="btn-store" href="https://www.amazon.in/s?k=Travel+Less+Feel+More+Journal+Atul+Masih&tag=travelheart20-21" target="_blank">Search on Amazon</a>
+                <a class="btn-store btn-store-disabled" aria-disabled="true">Launching Soon</a>
             </div>
+
             <div class="product-card">
                 <span class="product-badge">Coming Soon</span>
                 <p class="product-price">₹149</p>
@@ -721,6 +724,7 @@
                 <p class="product-desc">12 illustrated postcards from forgotten India. Print them, send them, frame them. Each one carries a short story you won't find in any guidebook.</p>
                 <a class="btn-store btn-store-disabled" aria-disabled="true">Launching Soon</a>
             </div>
+
             <div class="product-card">
                 <span class="product-badge">Free</span>
                 <p class="product-price">₹0</p>
@@ -728,6 +732,7 @@
                 <p class="product-desc">Pack less. Move lighter. A simple, honest checklist for slow travelers who want to travel with intention — not a 25kg suitcase of what-ifs.</p>
                 <a class="btn-store btn-store-free" href="#letters">Download Free</a>
             </div>
+
         </div>
     </div>
 </section>
@@ -816,7 +821,8 @@
             <div>
                 <p class="footer-col-title">Shop</p>
                 <ul class="footer-links">
-                    <li><a href="https://www.amazon.in/s?k=Travel+Less+Feel+More+Journal+Atul+Masih&tag=travelheart20-21" target="_blank">The Journal (Amazon)</a></li>
+                    <!-- ✦ CHANGE 2: Amazon link removed, replaced with plain Coming Soon text -->
+                    <li><span style="color:rgba(247,242,232,0.4)">The Journal — Coming Soon</span></li>
                     <li><span style="color:rgba(247,242,232,0.4)">Postcards — Coming Soon</span></li>
                     <li><a href="#gear">Gear Picks</a></li>
                     <li><a href="#letters">Free Checklist</a></li>
